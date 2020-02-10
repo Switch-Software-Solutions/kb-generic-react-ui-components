@@ -1,0 +1,43 @@
+
+@import '../../assets/css/variables';
+
+.buttonCell {
+  width: 50px;
+}
+
+.buttonCell__icon {
+	color: $colorGrey;
+	cursor: pointer;
+	transition: color 200ms;
+}
+.buttonCell__icon:hover {
+	color: $colorGreyDark; 
+}
+
+// Empty
+
+.buttonCell__icon_empty {
+	cursor: default;
+}
+
+// Disabled
+
+.buttonCell.disabled {
+	cursor: not-allowed;
+
+	.buttonCell__icon {
+		cursor: not-allowed;
+	}
+	.buttonCell__icon:hover {
+		color: $colorGrey;
+		box-shadow: none;
+	}
+}
+
+// Responsive //
+
+@media screen and (max-width: $mediaqueryS) {
+	.buttonCell {
+    width: auto;
+	}
+}

@@ -1,0 +1,128 @@
+@import '../assets/css/variables';
+
+// Input //
+
+.uploader_input{
+	display: none;
+}
+
+// Button label //
+
+.uploaderLabel_button {
+	//// shape & display ////
+	display: inline-block;
+	padding: 15px 20px 15px 20px;
+  border: 1px solid $colorLine;
+	border-radius: 1000px;
+	cursor: pointer;
+
+	//// font ////
+  font-size: 16px;
+	
+	//// colors, shadow & outline////
+	background-color: white;
+	border-color: $colorLine;
+  color: $colorTextLight;
+	box-shadow: none;
+	outline: none;
+
+	//// transition ////
+	transition: background-color 200ms, border-color 200ms, color 200ms;
+
+	&:hover {
+		border-color: $colorGreyDark;
+  	color: $colorGreyDark;
+	}
+	&:focus {
+		border-color: $colorText;
+  	color: $colorText;
+	}
+}
+.uploaderLabel_button.uploaderLabel_button_styleFill {
+	font-weight: bold;
+	background-color: $colorMain;
+	border-color: white;
+	color: white;
+	box-shadow: $shadowSmall;
+	
+	&:hover {
+		background-color: $colorMainLight;
+		border-color: white;
+  	color: white;
+	}
+	&:focus {
+		background-color: $colorMainDark;
+		border-color: white;
+  	color: white;
+	}
+}
+
+// Drag n drop label //
+
+.uploaderLabel_dragndrop {
+	//// shape & display ////
+	display: block;
+	padding: 10px;
+  border: 1.5px solid $colorBkgGrey !important;
+	border-radius: 15px;
+	min-height: 105px;
+	cursor: pointer;
+
+	//// text //// 
+  font-size: 1.3rem;
+	text-align: center;
+
+	//// colors, shadow & outline////
+	background-color: white;
+	border-color: $colorLine;
+  color: $colorText;
+	outline: none;
+
+	//// transition ////
+	transition: background-color 200ms, border-color 200ms;
+
+	&:hover {
+		border-color: $colorLine;
+	}
+
+	//// children ////
+	.uploaderLabel__icon {
+		display: block;
+		font-size: 28px;
+		color: $colorTextLight;
+		margin-top: .5rem;
+		margin-bottom: .75rem;
+		margin-right: 0;
+		transition: opacity 200ms;
+	}
+
+	.uploaderLabel_dragndrop__text {
+		font-size: 1rem;
+		font-weight: bold;
+		margin: .5rem auto;
+		text-align: center;
+	}
+}
+
+// Icon //
+
+.uploaderLabel__icon {
+	top: 0;
+	margin-right: .8rem;
+}
+.uploaderLabel_button_iconOnly {
+	padding: 15px;
+
+	.uploaderLabel__icon { margin-right: 0; }
+}
+
+// Responsive //
+
+@media (max-width: $mediaqueryXS) {
+	.buttonText {
+		display: none;
+	}
+	.uploaderLabel__icon {
+		margin-right: 0;
+	}
+}

@@ -1,0 +1,16 @@
+
+@import '../../assets/css/variables';
+// unscoped styles for extending ReactCrop__image class 
+// enables styling on img attr inside cropper
+.ReactCrop__image {
+	max-height: 70vh;
+	max-width: 100%;
+}
+
+// Responsive //
+
+@media (max-width: $mediaqueryS) {
+  .card_padding, .card_paddingMedium {
+    padding: 1rem;
+  }
+}

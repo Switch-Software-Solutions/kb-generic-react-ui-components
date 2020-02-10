@@ -1,0 +1,45 @@
+
+@import '../assets/css/variables';
+
+.buttonGroup > button {
+	border-radius: 0;
+	margin-right: -2px;
+
+	&:first-of-type {
+		border-radius: 1000px 0 0 1000px;
+	}
+	&:last-of-type {
+		border-radius: 0 1000px 1000px 0;
+	}
+}
+
+.buttonGroup > button {
+	text-transform: capitalize;
+}
+
+.mobileScrollPadding {
+	display: none;
+}
+
+// Responsive //
+
+@media screen and (max-width: $mediaqueryS) {
+	.scrollableBtnGroupCont {
+		position: relative;
+    height: 4rem;
+	}
+
+	.buttonGroup_mobileScroll {
+		position: absolute;
+		left: -1rem;
+		right: unset;
+		width: calc(100vw);
+		display: flex;
+    padding-bottom: .5rem;
+    overflow-x: scroll;
+	}
+	.mobileScrollPadding {
+		display: block;
+		padding: 0 .5rem;
+	}
+}

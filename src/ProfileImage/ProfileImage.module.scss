@@ -1,0 +1,11 @@
+@import '../assets/css/variables';
+
+.defaultProfileImageStyle {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+	border-radius: 1000px;
+	background-color: white;
+  box-shadow: $shadowSmall;
+}

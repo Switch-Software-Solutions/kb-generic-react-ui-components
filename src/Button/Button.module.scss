@@ -1,0 +1,179 @@
+@import '../assets/css/variables';
+
+///// Base /////
+
+.button {
+    display: inline-block;
+    padding: 10px 40px 12px 40px;
+    border: 2px solid black;
+    border-radius: 1000px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    box-shadow: none;
+		outline: none;
+		white-space: nowrap;
+    transition: background-color 200ms, border-color 200ms, color 200ms, box-shadow 200ms;
+}
+.button:not(:disabled):hover {
+    background-color: #383838;
+    border-color: #383838;
+}
+.button:not(:disabled):active {
+    background-color: black;
+    border-color: black;
+}
+.button:not(:disabled):focus {
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.button:disabled {
+	opacity: .8;
+}
+
+.button_iconOnly {
+	width: calc(3rem - 2px);
+	height: calc(3rem - 2px);
+	padding: 0;
+}
+.button_sizeSmall.button_iconOnly {
+	padding: 0;
+	width: calc(2.4rem - 2px);
+	height: calc(2.4rem - 2px);
+}
+.button_sizeBig.button_iconOnly {
+	padding: 0;
+	width: calc(5rem - 2px);
+	height: calc(5rem - 2px);
+}
+
+///// Icon /////
+
+.button__iconContLeft, .button__iconContRight, .button__iconContOnly {
+    position: relative;
+    top: .5px;
+    margin-right: 1rem;
+}
+.button__iconContRight {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+.button__iconContOnly {
+	top: 0;
+	margin-right: 0;
+}
+
+.button_sizeSmall .button__iconContLeft, .button_sizeSmall .button__iconContRight {
+	top: 0;
+  margin-right: .8rem;
+}
+.button_sizeSmall.button_styleClear .button__iconContLeft, .button_sizeSmall.button_styleClear .button__iconContRight,
+.button_sizeTiny .button__iconContLeft, .button_sizeTiny .button__iconContRight {
+    top: 0;
+    margin-right: .3rem;
+}
+.button_sizeSmall .button__iconContRight, .button_sizeTiny .button__iconContRight {
+    margin-left: .3rem;
+}
+
+///// Size /////
+
+.button_sizeBig {
+    padding: 16px 60px 18px 60px;
+    font-size: 22px;
+}
+.button_sizeSmall {
+    padding: 6px 20px 8px 20px;
+    font-size: 16px;
+}
+.button_sizeTiny {
+	padding: 7px 20px;
+	font-size: $fontSizeSmall;
+}
+
+.button_sizeSmall.button_styleClear, .button_sizeTiny.button_styleClear {
+    padding: 0 .5rem;
+    font-size: 16px;
+}
+.button_sizeTiny, .button_sizeTiny.button_styleClear {
+	font-size: $fontSizeSmall;
+}
+
+.button_sizeHuge {
+	padding: 0;
+	width: 160px;
+	height: 160px;
+}
+.button_sizeHuge .button__iconContLeft, .button_sizeHuge .button__iconContRight {
+	margin: 0;
+	font-size: 40px;
+}
+
+///// Color /////
+
+$btnColors: ('Main': $colorMain, 'Grey': $colorGrey, 'Info': $colorInfo, 'Warning': $colorWarning, 'Danger': $colorDanger);
+$btnColorsHover: ('Main': $colorMainLight, 'Grey': $colorGreyLight, 'Info': $colorInfoLight, 'Warning': $colorWarningLight, 'Danger': $colorDangerLight);
+$btnColorsActive: ('Main': $colorMainDark, 'Grey': $colorGreyDark, 'Info': $colorInfoDark, 'Warning': $colorWarningDark, 'Danger': $colorDangerDark);
+$btnColorsFocusShadow: ('Main': $colorMainShadow, 'Grey': $colorGreyShadow, 'Info': $colorInfoShadow, 'Warning': $colorWarningShadow, 'Danger': $colorDangerShadow);
+
+@each $name, $color in $btnColors {
+    .button_color#{$name} {
+        border-color: $color;
+        background-color: $color;
+        color: $color;
+		}
+}
+
+@each $name, $color in $btnColorsHover {
+    .button_color#{$name}:not(:disabled):hover {
+        border-color: $color;
+        background-color: $color;
+        color: $color;
+    }
+}
+@each $name, $color in $btnColorsActive {
+    .button_color#{$name}:not(:disabled):active {
+        border-color: $color;
+        background-color: $color;
+        color: $color;
+    }
+}
+@each $name, $color in $btnColorsFocusShadow {
+	.button_color#{$name}:not(:disabled):focus {
+		box-shadow: 0 0 0 3px $color;
+	}
+}
+
+///// Style /////
+
+.button_styleFill, .button_styleFill:not(:disabled):hover, .button_styleFill:not(:disabled):active {
+    color: white;
+}
+
+.button_styleOutline {
+    background-color: transparent;
+}
+.button_styleOutline:not(:disabled):hover, .button_styleOutline:not(:disabled):active {
+    color: white;    
+}
+
+.button_styleClear, .button_styleClear:not(:disabled):hover, .button_styleClear:not(:disabled):active {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+///// Float //////
+
+.button_floatRight {
+	float: right;
+}
+.button_floatLeft {
+	float: left;
+}
+
+///// Width //////
+
+.button_fullWidth {
+	width: 100%;
+}

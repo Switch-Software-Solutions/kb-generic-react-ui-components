@@ -1,0 +1,113 @@
+@import "../assets/css/variables";
+
+.tooltip {
+  position: absolute;
+  width: 400px;
+  text-align: left;
+}
+.tooltip_center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tooltip_top {
+  left: 50%;
+	transform: translateX(-50%);
+	margin-top: 1.5rem;
+}
+.tooltip_bottom {
+  top: 50%;
+  left: 50%;
+	transform: translateX(-50%);
+	margin-bottom: 1.5rem;
+}
+.tooltip_left {
+  top: 50%;
+  left: -50%;
+	transform: translateY(-50%);
+	margin-left: 1.5rem;
+}
+.tooltip_right {
+  top: 50%;
+  left: 50%;
+	transform: translateY(-50%);
+	margin-right: 1.5rem;
+}
+
+.tooltip__content {
+  margin-left: 1rem;
+}
+
+.tooltip__directionArrow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+}
+.tooltip_top .tooltip__directionArrow {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid white;
+}
+.tooltip_bottom .tooltip__directionArrow {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 20px solid white;
+}
+.tooltip_left .tooltip__directionArrow {
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 20px solid white;
+}
+.tooltip_right .tooltip__directionArrow {
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 20px solid white;
+}
+
+// Size //
+
+.tooltip_small {
+	width: auto;
+	text-align: center;
+
+	.tooltip__content {
+		margin-left: 0;
+	}
+}
+
+// Position //
+
+.tooltip.tooltip_relative {
+  position: relative;
+  top: unset;
+  left: unset;
+  bottom: unset;
+  right: unset;
+  transform: none;
+}
+.tooltip.tooltip_absolute {
+  position: absolute;
+}
+
+// Responsive //
+
+@media screen and (max-width: $mediaqueryS) {
+  .tooltip {
+    width: 100%;
+	}
+	
+	.tooltip_top > div > div > div {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+	}
+	.tooltip_top {
+		bottom: auto;
+	}	
+	.tooltip {
+		width: fit-content;
+    margin: auto;
+	}
+}

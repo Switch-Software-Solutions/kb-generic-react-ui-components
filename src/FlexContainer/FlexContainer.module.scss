@@ -1,0 +1,82 @@
+
+@import '../assets/css/variables';
+
+.flexContainer {
+    display: flex;
+		width: 100%;
+}
+
+// Direction
+
+.flexContainer_dirCol { flex-direction: column; }
+.flexContainer_dirColRev { flex-direction: column-reverse; }
+.flexContainer_dirRow { flex-direction: row; }
+.flexContainer_dirRowRev { flex-direction: row-reverse; }
+
+// Justify content
+
+.flexContainer_justCenter { justify-content: center; }
+.flexContainer_justStart { justify-content: flex-start; }
+.flexContainer_justEnd { justify-content: flex-end; }
+.flexContainer_justAround { justify-content: space-around; }
+.flexContainer_justBetween { justify-content: space-between; }
+
+// Align items
+
+.flexContainer_alignCenter { align-items: center; }
+.flexContainer_alignStart { align-items: flex-start; }
+.flexContainer_alignEnd { align-items: flex-end; }
+
+// Wrap
+
+.flexContainer_wrap { flex-wrap: wrap; }
+
+// Responsive //
+
+$breakpoints: ('XL': $mediaqueryXL, 'L': $mediaqueryL, 'M': $mediaqueryM, 'S': $mediaqueryS, 'XS': $mediaqueryXS);
+$propertiesDir: (
+	'dirCol': column,
+	'dirColRev': column-reverse,
+	'dirRow': row,
+	'dirRowRev': row-reverse,
+);
+$propertiesJust: (
+	'justCenter': center,
+	'justStart': flex-start,
+	'justEnd': flex-end,
+	'justAround': space-around,
+	'justBetween': space-between,
+);
+$propertiesAlign: (
+	'alignCenter': center,
+	'alignStart': flex-start,
+	'alignEnd': flex-end,
+);
+$propertiesWrap: (
+	'wrap': wrap
+);
+
+@each $breakpointName, $breakpoint in $breakpoints {
+	@media screen and (max-width: $breakpoint) {
+		@each $className, $cssValue in $propertiesDir {
+			.flexContainer_#{$className}_#{$breakpointName} {
+				flex-direction: $cssValue;
+			}
+		}
+		@each $className, $cssValue in $propertiesJust {
+			.flexContainer_#{$className}_#{$breakpointName} {
+				justify-content: $cssValue;
+			}
+		}
+		@each $className, $cssValue in $propertiesAlign {
+			.flexContainer_#{$className}_#{$breakpointName} {
+				align-items: $cssValue;
+			}
+		}
+		@each $className, $cssValue in $propertiesWrap {
+			.flexContainer_#{$className}_#{$breakpointName} {
+				flex-wrap: $cssValue;
+			}
+		}
+	}
+}

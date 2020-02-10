@@ -1,0 +1,74 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["react", "jsx-a11y", "import"],
+  "extends": ["react-app","plugin:react/recommended","eslint:recommended"],
+  "globals": {
+    "expect": true,
+    "describe": true,
+    "it": true,
+    "fixture": true,
+    "test": true,
+    "jest": true,
+    "document": true,
+    "window": true,
+    "fetch": true,
+    "navigator": true,
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "max-len": [
+      "error",
+      {"code": 140, "tabWidth":  4}
+    ],
+    "space-before-function-paren": 0,
+    "operator-linebreak": 0,
+    "react/jsx-tag-spacing": [
+      2,
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "never"
+      }
+    ],
+    "eqeqeq": "error",
+    "require-await": "error",
+    "no-await-in-loop": "error",
+    "no-return-await": "error",
+    "no-self-compare": "warn",
+    "object-curly-spacing": ["warn", "always"],
+    "arrow-spacing": [
+      "warn",
+      {"before": true, "after": true}
+    ],
+    "indent": [
+      "error",
+      "tab",
+      {"SwitchCase": 1}
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {"avoidEscape": true, "allowTemplateLiterals": true}
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "react/prop-types": [
+      0
+    ]
+  }
+}

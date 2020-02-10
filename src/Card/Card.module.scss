@@ -1,0 +1,54 @@
+
+@import '../assets/css/variables';
+
+// Base
+
+.card {
+	width: 100%;
+	border-radius: 25px;
+	background-color: white;
+	box-shadow: $shadowBig;
+	overflow: auto;
+}
+
+// Padding
+
+.card_padding {
+  padding: 2rem;
+}
+.card_paddingMedium {
+	padding: 1.5rem;
+}
+.card_paddingSmall {
+	padding: 1rem;
+}
+
+// Outline
+
+.card_outline {
+	border: 1px solid $colorLine;
+	background-color: transparent;
+}
+
+// Shadow
+
+.card_noShadow {
+	box-shadow: none;
+}
+
+// Width
+
+.card_widthAuto {
+	width: auto;
+}
+
+// Responsive
+
+@media (max-width: $mediaqueryS) {
+	.card_padding {
+		padding: 1.5rem;
+	}
+  .card_paddingMedium {
+    padding: 1rem;
+  }
+}

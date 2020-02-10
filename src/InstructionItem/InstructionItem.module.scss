@@ -1,0 +1,44 @@
+@import "../assets/css/variables";
+
+.instructionsItem {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.instructionsIcon {
+  display: table;
+  border: 2px solid $colorLine;
+  margin: 0 1.5rem 0rem 0rem;
+  border-radius: 100px;
+
+  .innerInstructionsIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.4rem;
+  }
+}
+
+.instructionsTitle {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.linkButton {
+  font-weight: bold;
+  color: $colorMain;
+}
+
+// Responsive //
+
+@media screen and (max-width: $mediaqueryS) {
+  .instructionsItem {
+    display: block;
+	}
+	.instructionsIcon {
+		margin-bottom: 1rem;
+	}
+}

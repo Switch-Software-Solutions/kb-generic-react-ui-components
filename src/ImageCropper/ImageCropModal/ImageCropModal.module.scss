@@ -1,0 +1,48 @@
+@import '../../assets/css/variables';
+
+.modalTitle{
+	margin-bottom: 0.5rem;
+}
+.modalSubtitle{
+	margin-bottom: 2rem;
+	color: $colorTextLight;
+}
+
+.cropperWrapper{
+	text-align: center;
+}
+
+.cropperError{
+	color: $colorDanger;
+}
+
+.rotateCont__btn {
+	transition: all 0.4ms;
+	padding: 0.5rem;
+	background-color: #fff;
+	border-radius: 100%;
+	border: solid 2px $colorMain;
+	color: $colorMain;
+	box-shadow: $shadowBig;
+}
+
+.rotateCont {
+	display: flex;
+	width: max-content;
+	margin: auto;
+	margin-top: 1rem;
+	h4 {
+		margin: 1rem;
+		opacity: 0.6;
+	}
+}
+.rotateCont__btn:hover {
+	box-shadow: $shadowSmall;
+	background-color: $colorMain;
+	color: #fff;
+}
+
+.rotateCont__btn:focus {
+	box-shadow: 0 0 0 2px $colorMain;
+	border-radius: 100%;
+}

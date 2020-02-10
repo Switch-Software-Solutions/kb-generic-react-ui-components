@@ -1,0 +1,59 @@
+
+@import '../assets/css/variables';
+
+.modalBkgScroll {
+	height: 100vh;
+	overflow-y: auto;
+}
+
+.modalBkgSize {
+	position: relative;
+	width: auto;
+	max-width: 600px;
+	margin: 2rem auto;
+}
+
+.modal {
+    width: 100%;
+    text-align: left;
+		z-index: 1050;
+		transition: all 0.5s;
+}
+
+.fadeOut {
+	transition: all 0.5s;
+}
+
+@media (max-width: $mediaqueryS) {
+	.modalBkgSize {
+		max-width: calc(100vw - 2rem);
+	}
+}
+
+/* Close button */
+
+.modal__closeBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 1000px;
+    font-size: $fontSizeSmall;
+    background-color: #B4B4B4;
+    color: white;
+    box-shadow: none;
+    outline: none;
+    transition: background-color 200ms;
+}
+.modal__closeBtn:hover {
+    background-color: black;
+}
+.modal__closeBtn:active {
+    background-color: black;
+}

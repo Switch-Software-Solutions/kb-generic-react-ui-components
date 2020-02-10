@@ -1,0 +1,64 @@
+
+@import '../../assets/css/variables';
+
+.dropdownMenuItem {
+	display: block;
+	cursor: pointer;
+	&:last-of-type .dropdownMenuItemLink {
+		border-radius: 0 0 25px 25px;
+	}
+}
+
+.dropdownMenuItemLink {
+	display: block;
+	width: 100%;
+	padding: 1rem;
+	border: none;
+	font-weight: normal;
+	font-size: 1rem;
+	text-align: left;
+	color: $colorText !important;
+	background-color: white;
+	transition: color 200ms, background-color 200ms, border 200ms;
+
+	&:hover {
+		background-color: $colorBkgGrey;
+	}
+	&:active {
+		background-color: $colorLine;
+	}
+	&:focus {
+		outline: 2px solid $colorGreyLight;
+	}
+
+	.dropdownMenuItemLink__icon {
+		margin-right: 1rem;
+		color: $colorTextLight;
+	}
+}
+
+// Colors //
+
+.dropdownMenuItem_colorMain .dropdownMenuItemLink {
+	color: white !important;
+	background-color: $colorMain;
+
+	&:hover {
+		background-color: $colorMainLight;
+	}
+	&:active {
+		background-color: $colorMainDark;
+	}
+
+	.dropdownMenuItemLink__icon {
+		color: white;
+	}
+}
+
+// Responsive //
+
+@media (max-width: $mediaqueryS) {
+	.dropdownMenuItem:last-of-type .dropdownMenuItemLink {
+		border-radius: 0;
+	}
+}

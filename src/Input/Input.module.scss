@@ -1,0 +1,465 @@
+@import "../assets/css/variables";
+
+// Container //
+
+.inputContainer {
+  position: relative;
+  margin-bottom: 2rem;
+  transition: margin-bottom 200ms;
+}
+
+.inputContainer_message {
+  margin-bottom: 3rem;
+}
+
+.inputContainer_checkbox {
+  padding-left: 2.5rem;
+}
+
+.inputContainer_checkbox.inputContainer_message {
+  margin-bottom: 3.5rem;
+}
+
+.inputGroupContainer {
+  position: relative;
+}
+
+// Label //
+
+.label {
+  display: inline-block;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  opacity: 0;
+  color: $colorText;
+}
+.label.label_visible {
+  position: static;
+  width: unset;
+  height: unset;
+  margin: 0 0 0.5rem 0;
+  font-size: $fontSizeSmall;
+  overflow: visible;
+  opacity: 1;
+  cursor: pointer;
+}
+
+// Checkbox
+.inputContainer_checkbox .label {
+  position: relative;
+  display: inline-block;
+  padding: 0.3rem 0;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -2.5rem;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid $colorLine;
+    border-radius: 8px;
+    background-color: white;
+    transition: border-color 100ms ease-in-out, background-color 100ms ease-in-out, box-shadow 100ms ease-in-out;
+  }
+
+  &::after {
+    content: url('data:image/svg+xml;charset=UTF-8, <svg focusable="false" class="svg-inline--fa fa-check fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="white" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>');
+    position: absolute;
+    top: 0;
+    left: -2.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin: calc(0.25rem + 2px);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+  }
+}
+
+.inputContainer_checkbox .input:checked ~ .label::before {
+  border-color: $colorMain;
+  background-color: $colorMain;
+  color: white;
+}
+
+// Icon //
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: $colorTextLight;
+  transition: color 200ms;
+}
+
+.rightIcon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: $colorTextLight;
+  transition: color 200ms;
+
+  &:hover {
+    cursor: pointer;
+    color: $colorText;
+  }
+}
+
+// Text Area //
+.inputGroup_textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid $colorLine;
+  border-radius: 25px;
+  font-size: 18px;
+  line-height: 1.2;
+  box-shadow: none;
+  outline: none;
+  transition: border-color 200ms;
+
+  &.inputGroup_textareaDanger {
+    border: 1px solid $colorDanger;
+  }
+
+  &:focus-within {
+    border-color: black;
+  }
+
+  & textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    font-size: 18px;
+    line-height: 1.2;
+    box-shadow: none;
+    outline: none;
+    transition: border-color 200ms;
+  }
+}
+
+// Input //
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid $colorLine;
+  border-radius: 1000px;
+  font-size: 18px;
+  line-height: 1.2;
+  box-shadow: none;
+  outline: none;
+  transition: border-color 200ms, box-shadow 200ms;
+}
+
+.inputContainer_icon .input {
+  padding-left: 3rem;
+}
+
+.input:disabled {
+  border: none;
+  background-color: $colorBkgGrey;
+  color: $colorTextLight;
+}
+
+// Checkbox
+.inputContainer_checkbox .input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+@media (max-width: $mediaqueryS) {
+  .input {
+    padding: 0.8rem;
+  }
+}
+
+// Range
+.input[type=range] {
+  -webkit-appearance: none;
+	width: 100%;
+	margin: 0;
+	border: none;
+	
+	&:focus {
+		outline: none;
+	}
+
+	// Webkit
+	&::-webkit-slider-runnable-track {
+		width: 100%;
+		height: .5rem;
+		cursor: pointer;
+		animate: 0.2s;
+		box-shadow: none;
+		background: $colorBkgGrey;
+		border-radius: 1000px;
+		border: 1px solid $colorLine;
+	}
+	&::-webkit-slider-thumb {
+		box-shadow: $shadowSmall;
+		border: none;
+		height: 2rem;
+		width: 2rem;
+		border-radius: 1000px;
+		background: $colorMain;
+		cursor: pointer;
+		-webkit-appearance: none;
+		margin-top: calc(-.75rem);
+	}
+	&:focus::-webkit-slider-runnable-track {
+		background: $colorBkgGrey;
+	}
+
+	// Mozilla
+	&::-moz-range-track {
+		width: 100%;
+		height: .5rem;
+		cursor: pointer;
+		animate: 0.2s;
+		box-shadow: none;
+		background: $colorBkgGrey;
+		border-radius: 1000px;
+		border: 1px solid $colorLine;
+	}
+	&::-moz-range-thumb {
+		box-shadow: $shadowSmall;
+		border: none;
+		height: 2rem;
+		width: 2rem;
+		border-radius: 1000px;
+		background: $colorMain;
+		cursor: pointer;
+	}
+
+	// IE
+	&::-ms-track {
+		width: 100%;
+		height: .5rem;
+		cursor: pointer;
+		animate: 0.2s;
+		background: transparent;
+		border-color: transparent;
+		border-width: 1000px 0;
+		color: transparent;
+	}
+	&::-ms-fill-lower {
+		background: $colorBkgGrey;
+		border: 1px solid $colorLine;
+		border-radius: 1000px;
+		box-shadow: none;
+	}
+	&::-ms-fill-upper {
+		background: $colorBkgGrey;
+		border: 1px solid $colorLine;
+		border-radius: 1000px;
+		box-shadow: none;
+	}
+	&::-ms-thumb {
+		box-shadow: $shadowSmall;
+		border: none;
+		height: 2rem;
+		width: 2rem;
+		border-radius: 1000px;
+		background: $colorMain;
+		cursor: pointer;
+	}
+	&:focus::-ms-fill-lower {
+		background: $colorBkgGrey;
+	}
+	&:focus::-ms-fill-upper {
+		background: $colorBkgGrey;
+	}
+}
+
+// Style //
+
+.inputContainer_styleHeader {
+  margin: 0;
+
+  .input {
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+.inputContainer_styleTitle,
+.inputContainer_styleContent {
+  margin: 0;
+  border: none !important;
+
+  .label.label_visible {
+    position: absolute;
+    top: 2.5rem;
+    left: calc(-100px - 1rem);
+    width: 100px;
+    text-align: right;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .input {
+    width: calc(100% - 4rem);
+    margin: 2rem;
+    padding: 0 0 2rem 0;
+    border: none;
+    border-bottom: 1px solid $colorLine;
+    border-radius: 0;
+    font-size: 1.75rem;
+    background-color: transparent;
+  }
+
+  .inputMessage {
+    bottom: 2.5rem;
+    left: 2rem;
+    margin: 0;
+  }
+}
+
+.inputContainer_styleContent {
+  .label.label_visible {
+    top: 0.25rem;
+  }
+
+  .input {
+    padding: 0;
+    font-size: 18px;
+  }
+  .inputGroup_textarea {
+    border: none;
+    padding: 0 2rem 2rem 2rem;
+    border-radius: 0;
+    min-height: 300px;
+  }
+
+  textarea {
+    min-height: calc(300px - 2rem);
+    background-color: transparent;
+  }
+
+  .inputMessage {
+    bottom: 2rem;
+  }
+}
+
+.inputContainer_styleTitle.inputContainer_statusDanger,
+.inputContainer_styleContent.inputContainer_statusDanger {
+  .input {
+    border: none;
+    border-bottom: 1px solid $colorDanger;
+
+    &:focus {
+      border: none;
+      border-bottom: 1px solid $colorDanger;
+    }
+  }
+  .label.label_visible {
+    color: $colorDanger;
+  }
+}
+
+// Status //
+
+.inputContainer_statusDanger {
+  .input {
+    border: 1px solid $colorDanger;
+  }
+
+  .icon {
+    color: $colorDanger;
+  }
+
+  &.inputContainer_checkbox .label::before {
+    border-color: $colorDanger;
+  }
+}
+
+.inputContainer_statusInfo {
+  .input {
+    border: 1px solid $colorInfo;
+  }
+
+  .icon {
+    color: $colorInfo;
+  }
+
+  &.inputContainer_checkbox .label::before {
+    border-color: $colorInfo;
+  }
+}
+
+.inputMessage {
+  position: absolute;
+  margin: 0.5rem 0 0 20px;
+  font-size: 13px;
+  color: $colorDanger;
+  transition: opacity 200ms;
+}
+.inputMessageGray {
+  position: absolute;
+  margin: 0.5rem 0 0 20px;
+  font-size: 13px;
+  color: $colorGreyDark;
+  transition: opacity 200ms;
+}
+
+.inputContainer_checkbox .inputMessage {
+  margin: 0.25rem 0 0 0;
+}
+
+// Focus //
+
+.input:focus {
+  border-color: $colorText;
+
+  & + .icon {
+    color: $colorText;
+  }
+}
+
+.inputContainer_statusDanger .input:focus {
+  border: 1px solid $colorDangerLight;
+
+  & + .icon {
+    color: $colorDangerLight;
+  }
+}
+
+.inputContainer_statusInfo .input:focus {
+  border: 1px solid $colorInfoLight;
+
+  & + .icon {
+    color: $colorInfoLight;
+  }
+}
+
+// Checkbox
+.inputContainer_checkbox .input:focus ~ .label::before {
+  box-shadow: 0 0 0 2px $colorLine;
+}
+
+.inputContainer_styleHeader .input:focus {
+  border-color: transparent;
+}
+
+@media screen and (max-width: $mediaqueryS) {
+	.inputContainer_styleHeader .input {
+		height: 2rem;
+		font-size: $fontSizeSmall;
+	}
+}

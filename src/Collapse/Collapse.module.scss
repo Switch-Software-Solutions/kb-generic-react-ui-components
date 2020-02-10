@@ -1,0 +1,69 @@
+
+@import '../assets/css/variables';
+
+// Base //
+
+.collapse {
+	width: 100%;
+	border-top: 1px solid $colorLine;
+	transition: all 400ms;
+	text-align: left;
+}
+
+
+// Button //
+
+.collapseBtn {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	padding: 1rem 0;
+	text-align: left;
+	font-weight: normal;
+}
+
+.collapseBtn_arrow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.5rem;
+	min-width: 2.5rem;
+	height: 2.5rem;
+	margin-right: 1rem;
+	border: 2px solid $colorMain;
+	border-radius: 1000px;
+	font-size: 1rem;
+	background-color: $colorMain;
+	color: white;
+	box-shadow: $shadowBig;
+	transition: border 200ms, background-color 200ms, color 200ms, transform 200ms;
+
+	svg { margin-top: 1px; }
+}
+
+// Active class //
+
+.collapse.collapseActive {
+	margin-bottom: 2rem;
+
+	.collapseBtn_arrow {
+		transform: rotate(180deg);
+		background-color: white;
+		color: $colorMain;
+	}
+}
+
+// Focus //
+
+.collapse .collapseBtn:focus, .collapse.collapseActive .collapseBtn:focus {
+	box-shadow: none;
+
+	.collapseBtn_arrow {
+		border: 2px solid $colorMainLight;
+		background-color: $colorMainLight;
+		color: white;
+	}
+}
+
+// Responsive //

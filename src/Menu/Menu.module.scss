@@ -1,0 +1,92 @@
+@import "../assets/css/variables";
+
+.menuNav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.menuNavList {
+  height: 100%;
+  margin: 0;
+  padding-left: 2rem;
+  list-style-type: none;
+}
+.menuNavList > li {
+  display: inline-block;
+  height: 100%;
+  margin-right: 2rem;
+  font-size: 15px;
+}
+.menuNavList > li:last-of-type {
+  margin-right: 0;
+}
+
+.menuNavList > li > a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: $colorText;
+  transition: color 200ms;
+}
+.menuNavList > li > a:hover {
+  color: $colorMain;
+}
+
+// Menu center //
+
+.menuNav_headerCenter .menuNavList {
+  width: calc(120px + 3rem);
+  padding-left: 1rem;
+
+  > li {
+    margin-right: 1rem;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+// Footer Style //
+
+.menuNav_footer .menuNavList > li > a {
+  font-weight: normal;
+  color: $colorGrey;
+}
+.menuNav_footer .menuNavList > li > a:hover {
+  color: $colorText;
+}
+
+// Responsive //
+
+@media screen and (max-width: $mediaqueryS) {
+  .menuNavList > li {
+    margin: auto;
+	}
+	
+  .menuNav_headerCenter .menuNavList {
+		position: relative;
+		display: flex;
+		width: 100vw;
+    padding: 0;
+		left: -1rem;
+		
+    > li {
+			margin: 0;
+      &:last-of-type { margin: 0; }
+		}
+		
+    > li > div > button {
+			width: 25vw;
+			height: 50px;
+			border: none;
+			background-color: transparent;
+    }
+   
+    > li > div > button > svg {
+      height: 1.2rem;
+    }
+  }
+}

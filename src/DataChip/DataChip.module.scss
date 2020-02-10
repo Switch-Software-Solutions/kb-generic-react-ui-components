@@ -1,0 +1,46 @@
+
+@import '../assets/css/variables';
+
+// Container //
+
+.datachip {
+	position: relative;
+	width: 100%;
+	padding: 1.5rem;
+	border: 1px solid $colorLine;
+	border-radius: 25px;
+}
+
+// Text //
+
+.datachipText {
+	margin: 0;
+}
+
+.datachipTextMain {
+	display: block;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+// Icon //
+
+.datachipIcon {
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 1000px;
+	background-color: $colorMain;
+	color: white;
+}
+
+// Responsive //
+
+@media (max-width: $mediaqueryS) {
+
+}

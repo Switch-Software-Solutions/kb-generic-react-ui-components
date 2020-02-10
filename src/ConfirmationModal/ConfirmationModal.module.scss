@@ -1,0 +1,11 @@
+@import '../assets/css/variables';
+///// Responsive /////
+
+@media (max-width: $mediaqueryS) {
+	.confirmationModalButtons > div > button {
+		width: 100%;
+		margin-bottom: 1rem;
+
+		&:first-of-type { margin: 0; }
+	}
+}

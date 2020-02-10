@@ -1,0 +1,180 @@
+
+@import '../assets/css/variables';
+
+// Container //
+
+.selectContainer {
+	position: relative;
+	margin-bottom: 2rem;
+	transition: margin-bottom 200ms;
+}
+.selectContainer_message {
+	margin-bottom: 3rem;
+}
+.selectContainer_noMessage {
+	margin-bottom: 0;
+}
+.selectContainer_noMessage.selectContainer_message {
+	margin-bottom: 1rem;
+}
+.selectContainer_labelInline {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+@media (max-width: $mediaqueryS) {
+	.selectContainer_noMessage.selectContainer_message {
+		margin-bottom: 2rem;
+	}
+}
+
+.selectGroup {
+	position: relative;
+}
+.selectContainer_labelInline .selectGroup {
+	width: 100%;
+}
+
+// Label //
+
+.label {
+	display: inline-block;
+	position: absolute;
+	width: 1px;
+  height: 1px;
+  padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	opacity: 0;
+	color: $colorText;
+}
+.label.label_visible {
+	position: static;
+	width: unset;
+  height: unset;
+	margin: 0 0 .5rem 0;
+	font-size: $fontSizeSmall;
+	overflow: visible;
+	opacity: 1;
+	cursor: pointer;
+}
+.label.label_inline {
+	position: static;
+	display: inline;
+	width: auto;
+	height: auto;
+	margin-right: 1rem;
+	font-size: 0.88rem;
+	opacity: 1;
+	overflow: visible;
+}
+
+@media (max-width: $mediaqueryS) {
+	.label.label_inline {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		opacity: 0;
+	}
+}
+
+// Select //
+
+.select {
+	width: 100%;
+	padding: 1rem;
+	border: 1px solid $colorLine;
+	border-radius: 1000px;
+	font-size: 18px;
+	line-height: 1.2;
+	background-color: white;
+	box-shadow: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	transition: border-color 200ms;
+}
+.selectContainer_icon .select {
+	padding-left: 3rem;
+}
+
+.select:disabled {
+	border: none;
+	background-color: $colorBkgGrey;
+	color: $colorTextLight;
+}
+
+.selectContainer_labelInline .select {
+	padding: .75rem 1rem;
+}
+
+@media (max-width: $mediaqueryS) {
+	.select {
+		padding: .8rem;
+	}
+}
+
+// Icon //
+
+.selectArrowIcon {
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translateY(-50%);
+	color: $colorTextLight;
+	transform: color 200ms;
+}
+
+// Status //
+
+.selectContainer_statusDanger {
+	.select { border: 1px solid $colorDanger; }
+	.selectArrowIcon { color: $colorDanger; }
+	
+	&.selectContainer_checkbox .label::before { border-color: $colorDanger; }
+}
+.selectContainer_statusInfo {
+	.select { border: 1px solid $colorInfo; }
+	.selectArrowIcon { color: $colorInfo; }
+	
+	&.selectContainer_checkbox .label::before { border-color: $colorInfo; }
+}
+
+.selectMessage {
+	position: absolute;
+	margin: .5rem 0 0 20px;
+	font-size: 13px;
+	color: $colorDanger;
+	transition: opacity 200ms;
+}
+.selectContainer_noMessage .selectMessage {
+	bottom: -1.25rem;
+	right: 0;
+	margin: 0;
+}
+
+// Focus //
+
+.select:focus {
+	border-color: $colorText;
+	& + .selectArrowIcon { color: $colorText; }
+}
+.selectContainer_statusDanger .select:focus {
+	border: 1px solid $colorDangerLight;
+	& + .selectArrowIcon { color: $colorDangerLight; }
+}
+.selectContainer_statusInfo .select:focus {
+	border: 1px solid $colorInfoLight;
+	& + .selectArrowIcon { color: $colorInfoLight; }
+}
+
+// Custom //
+
+.selectContainer_custom {
+
+}

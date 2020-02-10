@@ -1,0 +1,62 @@
+ 
+///// Sass Variables /////
+
+// Color //
+
+$colorText: black !default;
+$colorTextLight: #8D8D8D !default;
+
+$colorBkgGrey: #F2F2F2 !default;
+$colorLine: #D9D9D9 !default;
+
+$colorMain: #2DAA7A !default;
+$colorMainLight: #42ce98 !default;
+$colorMainDark: #189062 !default;
+$colorMainShadow: rgba(45, 170, 122, 0.5) !default;
+
+$colorInfo: #0B74D5 !default;
+$colorInfoLight: #2595FC !default;
+$colorInfoDark: #0258A7 !default;
+$colorInfoShadow: rgba(11, 115, 213, 0.5) !default;
+
+$colorGrey: #8D8D8D !default;
+$colorGreyLight: #a1a1a1 !default;
+$colorGreyDark: #7a7a7a !default;
+$colorGreyShadow: rgba(141, 141, 141, 0.5) !default;
+
+$colorWarning: #E8B300 !default;
+$colorWarningLight: #FAC616 !default;
+$colorWarningDark: #C99B00 !default;
+$colorWarningShadow: rgba(232, 178, 0, 0.5) !default;
+
+$colorDanger: #F52323 !default;
+$colorDangerLight: #FF5151 !default; 
+$colorDangerDark: #CF1111 !default;
+$colorDangerShadow: rgba(245, 35, 35, 0.5) !default;
+
+$colorPaper: #F8F7F5 !default; 
+
+$shadowBig: 0 10px 60px rgba(0, 0, 0, 0.16) !default;
+$shadowBigStrong: 0 10px 60px rgba(0, 0, 0, 0.36) !default;
+$shadowSmall: 0 2px 12px rgba(0, 0, 0, 0.16) !default;
+$shadowSmallReverse: 0 -2px 12px rgba(0, 0, 0, 0.16) !default;
+
+// Font //
+
+$fontSizeSmall: .88rem !default;
+
+// Measurements //
+
+$containerCentralWidthS: 100% !default;
+$containerCentralWidthM: 600px !default;
+$containerCentralWidthL: 808px !default;
+
+// Media Queries //
+// Media queries should always be used with max-width.
+
+$mediaqueryXXS: 360px !default;
+$mediaqueryXS: 575px !default;
+$mediaqueryS: 767px !default;
+$mediaqueryM: 991px !default;
+$mediaqueryL: 1199px !default;
+$mediaqueryXL: 1299px !default;

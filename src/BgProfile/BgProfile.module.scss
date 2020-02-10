@@ -1,0 +1,14 @@
+@import '../assets/css/variables';
+
+.profileBackground {
+  height: 45vh;
+	background-color: $colorBkgGrey;
+	background-size: cover;
+	background-repeat: inherit;
+}
+
+@media screen and (max-width: $mediaqueryM) {
+  .profileBackground {
+    min-height: 300px;
+  }
+}

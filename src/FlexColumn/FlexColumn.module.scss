@@ -1,0 +1,10 @@
+$sizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+@each $size in $sizes {
+	$percentage: ($size / 12);
+	.col-#{$size}{
+		box-sizing: border-box;
+		flex-basis: percentage($percentage);
+		max-width: percentage($percentage);
+	}
+}
