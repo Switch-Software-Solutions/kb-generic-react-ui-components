@@ -8,22 +8,26 @@ const SweetError = (props) => {
 	// Set class
 	let sweeterrorClass = [styles.sweetErrorInfoCard];
 	if (props.noLine) sweeterrorClass.push(styles.sweetErrorInfoCard_noLine);
-	
+
 	return (
 		<div className={sweeterrorClass.join(' ')}>
-			{ props.icon &&
+			{props.icon &&
 				<div className={styles.sweetErrorInfoCard__icon}>
 					<FontAwesomeIcon icon={props.icon} />
 				</div>
 			}
 			<div className={styles.sweetErrorInfoCard__textCont}>
-				<h2 className={styles.sweetErrorInfoCard__title}>{props.title}</h2>
+				{
+					props.title ?
+						<h2 className={styles.sweetErrorInfoCard__title}>{props.title}</h2>
+						: null
+				}
 				<p className={styles.sweetErrorInfoCard__text}>
 					{props.message ? props.message : null}
 				</p>
 				{
 					props.secondaryMessage ?
-						<p className={styles.sweetErrorInfoCard__text}>
+						<p className={styles.sweetErrorInfoCard__secondaryText}>
 							{props.secondaryMessage}
 						</p>
 						: null

@@ -1,7 +1,7 @@
 {
-  "name": "@timeswan/ui-components",
-  "description": "Timeswan UI React Components",
-  "version": "0.3.1",
+  "name": "@switch-software/react-ui-components",
+  "description": "Switch Software UI React Components",
+  "version": "1.0.0",
   "main": "src/index.js",
   "main:src": "src/index.js",
   "scripts": {
@@ -20,9 +20,9 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
-    "@timeswan/core": "0.3.1",
     "node-sass": "^4.13.1",
-    "react-image-crop": "^8.4.0"
+    "react-image-crop": "^8.4.0",
+    "react-reveal": "^1.2.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.9",

@@ -19,12 +19,19 @@
   line-height: 1.4;
 }
 .sweetErrorInfoCard__title {
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-size: 1.5rem;
 }
 .sweetErrorInfoCard__text {
-  margin-bottom: 0;
-  color: $colorTextLight;
+  margin: 0;
+	color: $colorTextLight;
+	font-weight: normal;
+}
+
+.sweetErrorInfoCard__text {
+  margin-top: 1;
+	color: $colorTextLight;
+	font-weight: normal;
 }
 
 // Responsive //

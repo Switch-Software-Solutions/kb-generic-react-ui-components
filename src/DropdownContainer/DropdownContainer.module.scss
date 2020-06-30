@@ -1,0 +1,12 @@
+ 
+@import '../assets/css/variables';
+
+.dropdownCont {
+	position: relative;
+}
+
+@media screen and (max-width: $mediaqueryS) {
+	.dropdownCont {
+		width: 100%;
+	}
+}

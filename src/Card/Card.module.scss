@@ -8,7 +8,11 @@
 	border-radius: 25px;
 	background-color: white;
 	box-shadow: $shadowBig;
-	overflow: auto;
+	overflow: auto!important;
+}
+
+.overflowVisible {
+	overflow: visible!important;
 }
 
 // Padding

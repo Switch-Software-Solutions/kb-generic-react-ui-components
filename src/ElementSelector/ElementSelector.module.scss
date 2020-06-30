@@ -1,0 +1,79 @@
+@import "assets/css/variables";
+
+// Selected elements chips //
+
+.selectedElementsList {
+	display: flex;
+	overflow: auto;
+	margin: -1rem 0 1rem 0;
+	padding: 0;
+}
+
+.selectedElementsListItem {
+	margin: 0.5rem;
+	text-transform: capitalize;
+
+	> span {
+		margin-left: 1rem!important;
+	}
+}
+
+// Main list //
+
+.elementsList {
+	max-height: 46vh;
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+	border: 1px solid $colorLine;
+	border-radius: .3rem;
+}
+
+.elementItem {
+	display: flex;
+	border-bottom: solid 1px $colorLine;
+}
+.elementItem__btn {
+	display: flex;
+	align-items: center;
+	width: calc(100% - 4px);
+	margin: 2px;
+	padding: 1rem .5rem;
+	
+	&:focus {
+		border-radius: 4px;
+		box-shadow: 0 0 0 2px $colorBkgGrey;
+	}
+}
+
+// Selected/Unselected icon
+.elementItem__selectedIcon {
+  display: block;
+  font-size: 2.2rem;
+  color: $colorMainLight;
+  margin-right: 1rem;
+}
+.elementItem__unselectedIcon {
+  display: block;
+  font-size: 2.2rem;
+  color: #fff;
+  border: solid 1px $colorTextLight;
+  margin-right: 1rem;
+  border-radius: 50px;
+}
+
+// Info
+.elementsList__infoText {
+  display: flex;
+	align-items: center;
+	margin: 0;
+  padding: .5rem 1rem;
+  border: 1px solid $colorInfo;
+  border-radius: 6px;
+	text-align: left;
+	color: $colorInfo;
+
+  svg {
+    color: $colorInfo;
+  }
+}

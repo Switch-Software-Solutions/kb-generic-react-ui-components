@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
-const Button = (props) => {
+const Button = React.forwardRef((props, ref) => {
 	const { t } = useTranslation();
 	// Props //
 	//
@@ -86,9 +86,15 @@ const Button = (props) => {
 		btnClass.push(styles.button_fullWidth);
 	}
 
+	if (props.highlightedIcon) btnClass.push(styles.button__iconLeftHighlighted);
+
+	if (props.buttonClassName) btnClass.push(props.buttonClassName);
+
+	// Type //
 	let buttonType = 'button';
 	if (props.type) buttonType = props.type;
 
+	// Icon //
 	if (props.iconPos === BUTTON_ICON_POS.ICONONLY && props.icon) btnClass.push(styles.button_iconOnly);
 	const leftIcon = () => {
 		if (props.iconPos === BUTTON_ICON_POS.LEFT && props.icon) {
@@ -116,15 +122,24 @@ const Button = (props) => {
 	};
 
 	return (
-		<button type={buttonType} className={btnClass.join(' ')} onClick={props.click} value={props.value}
-			disabled={props.disabled ? 'disabled' : null} title={props.title} aria-label={props.title} name={props.name}>
-
+		<button
+			ref={ref}
+			type={buttonType}
+			className={btnClass.join(' ')}
+			onClick={props.click}
+			value={props.value}
+			disabled={props.disabled ? 'disabled' : null}
+			title={props.title}
+			aria-label={props.title}
+			name={props.name}
+			id={props.id ? props.id : null}
+		>
 			{leftIcon()}
 			{t(props.text)}
 			{rightIcon()}
 		</button>
 	);
-};
+});
 
 Button.propTypes = {
 	type: PropTypes.string,
@@ -140,7 +155,10 @@ Button.propTypes = {
 	disabled: PropTypes.bool,
 	name: PropTypes.string,
 	float: PropTypes.string,
-	width: PropTypes.string
+	width: PropTypes.string,
+	buttonClassName: PropTypes.string,
+	highlightedIcon: PropTypes.bool,
+	id: PropTypes.string
 };
 
 export default Button;

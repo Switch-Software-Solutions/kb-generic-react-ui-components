@@ -1,33 +1,52 @@
  
 @import '../assets/css/variables';
 
+// Base //
+
 .dropdown {
 	position: absolute;
-	top: 50px;
-	right: 0;
-	min-width: 360px;
-	border-radius: 0 0 25px 25px;
+	max-width: 100vw;
 	background-color: white;
 	box-shadow: $shadowBig;
+	z-index: 25;
 	transition: top 200ms, height 200ms;
 
 	ul {
 		margin: 0;
-		padding: 0;
 		list-style-type: none;
 	}
+}
+
+// Border //
+
+.dropdown_borderFull { border-radius: 25px; }
+.dropdown_borderBottom { border-radius: 0 0 25px 25px; }
+.dropdown_borderNone { border-radius: 0; }
+
+// Format //
+
+.dropdown_formatHeader {
+	top: 50px;
+	right: 0;
+	min-width: 360px;
+
+	ul { padding: 0; }
 }
 
 // Responsive //
 
 @media screen and (max-width: $mediaqueryM) {
-	.dropdown {
+	.dropdown_formatHeader {
 		top: 46px;
 	}
 }
 
 @media screen and (max-width: $mediaqueryS) {
 	.dropdown {
+		width: calc(100vw - 2rem);
+	}
+
+	.dropdown_formatHeader {
     position: fixed;
 		top: 100px;
 		min-width: auto;

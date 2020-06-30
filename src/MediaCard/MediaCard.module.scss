@@ -20,22 +20,27 @@
   }
 }
 
-.buttonDiv {
-  width: 100%;
-  display: flex;
-  margin-bottom: -1rem;
-}
+// Button //
 
-.closeIcon {
-	height: 1.5em;
-	width: 1.5em;
-	line-height: 1.5em;
-	font-size: 0.88rem;
-	background-color: #F52323;
-	text-align: center;
-	color: white;
+.closeBtnCont {
+	display: table;
+    float: right;
+    margin-top: -.5rem;
+    margin-right: -.5rem;
+}
+.closeBtn {
 	position: inherit;
-	margin-left: auto;
+	height: 1.5rem;
+	width: 1.5rem;
 	border-radius: 50%;
-  cursor: pointer;
+	line-height: 1;
+	font-size: 0.88rem;
+	text-align: center;
+	background-color: $colorDanger;
+	color: white;
+	cursor: pointer;
+	
+	&:hover {
+		background-color: $colorDangerLight;
+	}
 }

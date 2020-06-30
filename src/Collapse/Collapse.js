@@ -5,9 +5,9 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Fade from 'react-reveal/Fade';
 
 import styles from './Collapse.module.scss';
-import { ANIMATIONS_DURATION } from '@timeswan/core';
 
 import Card, { CARD_PADDING } from '../Card/Card';
+import {ANIMATIONS_DURATION} from "../config";
 
 const Collapse = (props) => {
 
@@ -25,13 +25,13 @@ const Collapse = (props) => {
 					{props.title}
 				</div>
 			</button>
-			{props.active ? 
+			{props.active ?
 				<div className={'marginBottom_1'}>
 					<Fade duration={ANIMATIONS_DURATION.SLOWER}>
 						<Card padding={CARD_PADDING.BIG} noShadow outline>
 							{props.children}
 						</Card>
-					</Fade> </div>: null} 
+					</Fade> </div>: null}
 		</div>
 	);
 };

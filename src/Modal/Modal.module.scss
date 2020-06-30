@@ -30,7 +30,7 @@
 	}
 }
 
-/* Close button */
+// Close button //
 
 .modal__closeBtn {
     position: absolute;
@@ -49,11 +49,37 @@
     color: white;
     box-shadow: none;
     outline: none;
-    transition: background-color 200ms;
+		transition: background-color 200ms;
+		z-index: 1;
 }
 .modal__closeBtn:hover {
     background-color: black;
 }
 .modal__closeBtn:active {
     background-color: black;
+}
+
+// Responsive //
+
+@media screen and (max-width: $mediaqueryS) {
+	.modalBkgSize.modalBkgSize_mobileFull {
+		display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+		max-width: 100vw;
+		margin: 0;
+
+		.modal > div {
+			min-height: 100vh;
+			border-radius: 0;
+		}
+	}
+}
+
+// iOS Safari fix //
+
+@supports (-webkit-touch-callout: none) {
+	.modalBkgSize {
+		margin-bottom: calc(2rem + 85px + env(safe-area-inset-top));
+	}
 }

@@ -119,7 +119,10 @@ const FileUploader = (props) => {
 		// Set label class
 		let labelClass = [styles.uploaderLabel_button];
 		if(props.labelStyle === FILE_UPLOADER_STYLES.FILL) labelClass.push(styles.uploaderLabel_button_styleFill);
+		if(props.className) labelClass.push(props.className);
 		if(!props.text) labelClass.push(styles.uploaderLabel_button_iconOnly);
+
+
 
 		return (mode === FILE_UPLOADER_MODES.BUTTON) ?
 			(
@@ -188,7 +191,8 @@ FileUploader.propTypes = {
 	mode: PropTypes.number,
 	icon: PropTypes.any,
 	maxsize: PropTypes.number,
-	labelStyle: PropTypes.string
+	labelStyle: PropTypes.string,
+	className: PropTypes.string
 };
 
 export const FILE_UPLOADER_MODES = {

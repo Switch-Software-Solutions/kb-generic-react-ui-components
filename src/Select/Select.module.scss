@@ -110,7 +110,7 @@
 }
 
 .selectContainer_labelInline .select {
-	padding: .75rem 1rem;
+	padding: .75rem 3rem 0.75rem 1rem;
 }
 
 @media (max-width: $mediaqueryS) {
@@ -171,10 +171,4 @@
 .selectContainer_statusInfo .select:focus {
 	border: 1px solid $colorInfoLight;
 	& + .selectArrowIcon { color: $colorInfoLight; }
-}
-
-// Custom //
-
-.selectContainer_custom {
-
 }

@@ -1,0 +1,99 @@
+@import 'assets/css/variables';
+
+// List //
+
+.elementList{
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.elementItemBtn:focus {
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px $colorBkgGrey;
+
+}
+.elementItemBtn {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  border-bottom: solid 1px $colorLine;
+  padding: 1rem 0;
+}
+
+.textElement {
+  line-height: 2rem;
+  align-items: left;
+  text-align: left;
+}
+
+.addElement {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.addElement > button {
+  float: right;
+}
+
+// Item //
+
+.elementItem{
+  margin-bottom: 1rem;
+
+  img {
+    position: static;
+    left: 0;
+    top: 0;
+    transform: initial;
+    height: 4rem;
+  }
+}
+.elementItem__title {
+  margin-top: .5rem;
+  margin-bottom: .25rem;
+  font-size: $fontSizeSmall;
+  color: $colorText;
+}
+ .elementItem__relation{
+   font-size: .75rem;
+   color: $colorText;
+ }
+.elementItem__selectedIcon {
+  display: block;
+  font-size: 2.2rem;
+  color: $colorMainLight;
+  margin-right: 1rem;
+}
+.elementItem__unselectedIcon {
+  display: block;
+  font-size: 2.2rem;
+  color: #fff;
+  border: solid 1px $colorTextLight;
+  margin-right: 1rem;
+  border-radius: 50px;
+}
+
+// Info //
+
+.listInfoText {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid $colorInfo;
+  border-radius: 20px;
+  text-align: left;
+
+  svg { color: $colorInfo; }
+}
+
+// Current //
+
+.currentElement{
+  border-top: 1px solid $colorLine;
+
+  .currentElementTitle {
+    margin: 1.5rem 0 2rem 0;
+    text-align: left;
+    font-size: 1.15rem;
+    color: black;
+  }
+}

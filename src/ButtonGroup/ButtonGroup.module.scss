@@ -1,45 +1,151 @@
+@import "../assets/css/variables";
 
-@import '../assets/css/variables';
+///// Regular /////
 
-.buttonGroup > button {
-	border-radius: 0;
-	margin-right: -2px;
+.buttonGroup {
+	display: flex;
+	align-items: stretch;
 
-	&:first-of-type {
-		border-radius: 1000px 0 0 1000px;
-	}
-	&:last-of-type {
-		border-radius: 0 1000px 1000px 0;
+	.buttongroup__button {
+		flex-grow: 1;
+    flex-basis: 0;
+		border-radius: 0;
+		margin-right: -2px;
+
+		&:first-of-type {
+			border-radius: 1000px 0 0 1000px;
+		}
+		&:last-of-type {
+			border-radius: 0 1000px 1000px 0;
+		}
 	}
 }
 
-.buttonGroup > button {
-	text-transform: capitalize;
+///// Compact /////
+
+.buttonGroup.buttonGroup_formatCompact {
+
+	.buttongroup__button {
+		margin-right: 0;
+		padding: .75rem 1rem;
+		border: 2px solid transparent;
+		border-bottom: 2px solid $colorLine;
+		border-radius: 4px 4px 0 0;
+		white-space: normal;
+		background-color: transparent;
+		color: $colorTextLight;
+
+		> span {
+			display: block;
+			margin: 0 0 1rem 0;
+		}
+
+		&:hover {
+			background-color: transparent;
+			color: $colorMainLight;
+		}
+		&:active {
+			background-color: transparent;
+			color: $colorMainDark;
+		}
+		&:focus {
+			box-shadow: none;
+			border: 2px solid $colorMainShadow;
+		}
+	}
+	.buttongroup__button_active {
+		color: $colorMain;
+		background-color: $colorMainLightTransparent;
+		border-bottom: 2px solid $colorMain;
+
+		&:focus {
+			background-color: $colorMainLightTransparent;
+		}
+	}
 }
+
+///// Mobile scroll /////
 
 .mobileScrollPadding {
-	display: none;
+  display: none;
 }
 
-// Responsive //
+///// Responsive /////
+
+@media screen and (max-width: $mediaqueryXL) {
+
+	// Compact //
+
+	.buttonGroup.buttonGroup_formatCompact .buttongroup__button {
+		font-size: 1rem;
+	}
+}
 
 @media screen and (max-width: $mediaqueryS) {
+
+	// Compact //
+
+  .buttonGroup.buttonGroup_formatCompact, .buttonGroup.buttonGroup_formatCompactMobile {
+    position: relative;
+		left: -1rem;
+		width: 100vw;
+		
+		.buttongroup__button {
+			margin-right: 0;
+			padding: .5rem 1rem;
+			border: 2px solid transparent;
+			border-bottom: 2px solid $colorLine;
+			border-radius: 4px 4px 0 0;
+			white-space: nowrap;
+			font-size: $fontSizeSmall;
+			color: $colorTextLight;
+			
+			> span {
+				display: block;
+				margin: 0 0 0.5rem 0;
+				font-size: $fontSizeMedium;
+			}
+
+			&:hover {
+				background-color: transparent;
+				color: $colorMainLight;
+			}
+			&:active {
+				background-color: transparent;
+				color: $colorMainDark;
+			}
+			&:focus {
+				box-shadow: none;
+				border: 2px solid $colorMainShadow;
+			}
+		}
+		.buttongroup__button_active {
+			color: $colorMain;
+			background-color: $colorMainLightTransparent;
+			border-bottom: 2px solid $colorMain;
+
+			&:focus {
+				background-color: $colorMainLightTransparent;
+			}
+		}
+  }
+  
+	// Mobile scroll //
+
 	.scrollableBtnGroupCont {
 		position: relative;
-    height: 4rem;
+		height: calc(4rem + 2px);
 	}
-
 	.buttonGroup_mobileScroll {
 		position: absolute;
 		left: -1rem;
-		right: unset;
-		width: calc(100vw);
 		display: flex;
+		width: 100vw;
     padding-bottom: .5rem;
     overflow-x: scroll;
 	}
 	.mobileScrollPadding {
 		display: block;
-		padding: 0 .5rem;
+		padding: 0 1.5rem;
 	}
 }

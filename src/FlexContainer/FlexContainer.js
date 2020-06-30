@@ -76,16 +76,18 @@ const FlexContainer = (props) => {
 		if (breakpointElement[4]) flexClass.push(styles[`flexContainer_wrap${breakpointElement[0]}`]);
 	});
 
+	if (props.className) flexClass.push(props.className);
+
 	return <div className={flexClass.join(' ')}>{props.children}</div>;
 };
 
 FlexContainer.propTypes = {
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 	direction: PropTypes.string,
 	justify: PropTypes.string,
 	align: PropTypes.string,
 	wrap: PropTypes.bool,
-
 	directionXL: PropTypes.string,
 	justifyXL: PropTypes.string,
 	alignXL: PropTypes.string,

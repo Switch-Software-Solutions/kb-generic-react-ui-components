@@ -137,9 +137,9 @@ const ImageCropModal = (props) => {
 
 	return (
 		<>
-			<Modal padding show closeModal={props.closeModal}>
+			<Modal padding mobileFull show closeModal={props.closeModal}>
 				<div>
-					<h2 className={styles.modalTitle}>{t('IMAGE_CROP_MODAL.TITLE')}</h2>
+					<h2 className={styles.modalTitle + ' modalTitle'}>{t('IMAGE_CROP_MODAL.TITLE')}</h2>
 					<p className={styles.modalSubtitle}>{t('IMAGE_CROP_MODAL.DESC')}</p>
 					{state.image ?
 						<div>
@@ -154,11 +154,23 @@ const ImageCropModal = (props) => {
 							</div>
 							<div className={styles.rotateCont}>
 								<div>
-									<button title={`${t('IMAGE_CROP_MODAL.ROTATE')} 90° ${t('IMAGE_CROP_MODAL.COUNTERCLOCKWISE')} `} aria-label={`${t('IMAGE_CROP_MODAL.ROTATE')} 90° ${t('IMAGE_CROP_MODAL.COUNTERCLOCKWISE')}`} className={`${styles.rotateCont__btn} unstyledButton`} onClick={() => rotateImg(state.image, false)}> <FontAwesomeIcon icon={faUndoAlt} /> </button>
+									<button
+										title={`${t('IMAGE_CROP_MODAL.ROTATE')} 90° ${t('IMAGE_CROP_MODAL.COUNTERCLOCKWISE')} `}
+										aria-label={`${t('IMAGE_CROP_MODAL.ROTATE')} 90° ${t('IMAGE_CROP_MODAL.COUNTERCLOCKWISE')}`}
+										className={`${styles.rotateCont__btn} unstyledButton`}
+										onClick={() => rotateImg(state.image, false)}>
+										<FontAwesomeIcon icon={faUndoAlt} />
+									</button>
 								</div>
 								<h4>{t('IMAGE_CROP_MODAL.ROTATE')}</h4>
 								<div>
-									<button title={`${t('IMAGE_CROP_MODAL.ROTATE')} 90° ${t('IMAGE_CROP_MODAL.CLOCKWISE')}`} aria-label={`${t('IMAGE_CROP_MODAL.ROTATE')} 90° ${t('IMAGE_CROP_MODAL.CLOCKWISE')} `} className={`${styles.rotateCont__btn} unstyledButton `} onClick={() => rotateImg(state.image, true)}> <FontAwesomeIcon icon={faRedoAlt} /> </button>
+									<button 
+										title={`${t('IMAGE_CROP_MODAL.ROTATE')} 90° ${t('IMAGE_CROP_MODAL.CLOCKWISE')}`} 
+										aria-label={`${t('IMAGE_CROP_MODAL.ROTATE')} 90° ${t('IMAGE_CROP_MODAL.CLOCKWISE')} `} 
+										className={`${styles.rotateCont__btn} unstyledButton `} 
+										onClick={() => rotateImg(state.image, true)}>
+										 <FontAwesomeIcon icon={faRedoAlt} />
+										  </button>
 								</div>
 							</div>
 

@@ -13,6 +13,8 @@ $colorMain: #2DAA7A !default;
 $colorMainLight: #42ce98 !default;
 $colorMainDark: #189062 !default;
 $colorMainShadow: rgba(45, 170, 122, 0.5) !default;
+$colorMainLightTransparent: rgba(66, 206, 152, 0.1) !default; 
+
 
 $colorInfo: #0B74D5 !default;
 $colorInfoLight: #2595FC !default;
@@ -43,7 +45,9 @@ $shadowSmallReverse: 0 -2px 12px rgba(0, 0, 0, 0.16) !default;
 
 // Font //
 
+$fontSizeMedium: 1.2rem !default;
 $fontSizeSmall: .88rem !default;
+$fontSizeXSmall: .75rem !default;
 
 // Measurements //
 

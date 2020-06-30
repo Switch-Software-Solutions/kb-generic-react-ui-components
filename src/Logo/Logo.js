@@ -2,18 +2,15 @@ import React from 'react';
 import styles from './Logo.module.scss';
 import PropTypes from 'prop-types';
 
-import { systemImages, getImage } from '@timeswan/core';
 
-const Logo = (props) => {
-	let logoLocation = getImage(systemImages.logoStdImg);
-	if (props.importedLogo) logoLocation = props.importedLogo;
+const Logo = ({header, height, importedLogo }) => {
 
 	let logoClass = [styles.logo];
-	if (props.header) logoClass.push(styles.logo_header);
+	if (header) logoClass.push(styles.logo_header);
 
 	return (
-		<div className={logoClass.join(' ')} style={{ height: props.height }}>
-			<img src={logoLocation} alt='Timeswan' />
+		<div className={logoClass.join(' ')} style={{ height: height }}>
+			<img src={importedLogo} alt='' />
 		</div>
 	);
 };

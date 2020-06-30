@@ -27,9 +27,13 @@ const Card = (props) => {
 			break;
 	}
 
+	if (props.overflowVisible) cardClass.push(styles.overflowVisible);
+
 	if (props.outline) cardClass.push(styles.card_outline);
 
 	if (props.noShadow) cardClass.push(styles.card_noShadow);
+
+	if (props.className) cardClass.push(props.className);
 
 	return <div className={cardClass.join(' ')}>{props.children}</div>;
 };
@@ -38,6 +42,7 @@ Card.propTypes = {
 	padding: PropTypes.string,
 	outline: PropTypes.bool,
 	noShadow: PropTypes.bool,
+	overflowVisible: PropTypes.bool,
 	children: PropTypes.node.isRequired,
 	width: PropTypes.string
 };

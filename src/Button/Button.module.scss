@@ -7,7 +7,7 @@
     padding: 10px 40px 12px 40px;
     border: 2px solid black;
     border-radius: 1000px;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     background-color: black;
     color: white;
@@ -37,15 +37,20 @@
 	height: calc(3rem - 2px);
 	padding: 0;
 }
+.button_sizeBig.button_iconOnly {
+	padding: 0;
+	width: calc(5rem - 2px);
+	height: calc(5rem - 2px);
+}
 .button_sizeSmall.button_iconOnly {
 	padding: 0;
 	width: calc(2.4rem - 2px);
 	height: calc(2.4rem - 2px);
 }
-.button_sizeBig.button_iconOnly {
+.button_sizeTiny.button_iconOnly {
 	padding: 0;
-	width: calc(5rem - 2px);
-	height: calc(5rem - 2px);
+	width: calc(1.875rem - 2px);
+	height: calc(1.875rem - 2px);
 }
 
 ///// Icon /////
@@ -77,15 +82,66 @@
     margin-left: .3rem;
 }
 
+// Highlighted
+.button__iconLeftHighlighted {
+	padding: 10px 25px 12px 4.25rem;
+	box-shadow: $shadowSmall;
+
+	.button__iconContLeft {
+		position: absolute;
+    top: 50%;
+    left: -2px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+		width: 3.5rem;
+    height: 3.5rem;
+		border: 2px solid $colorText;
+		border-radius: 100%;
+		background-color: white;
+		color: $colorText;
+		box-shadow: $shadowSmall;
+		transition: background-color 200ms, border-color 200ms, color 200ms, box-shadow 200ms;
+	}
+}
+.button__iconLeftHighlighted:hover .button__iconContLeft {
+	color: white;
+	background-color: $colorText;
+}
+
+// Highlighted - Responsive
+@media screen and (max-width: $mediaqueryS) {
+	.button__iconLeftHighlighted {
+		position: relative;
+    width: 3rem;
+		height: 3rem;
+		padding: 0;
+		border: none;
+		font-size: 0;
+    color: transparent;
+    background: transparent;
+		box-shadow: none;
+		
+		.button__iconContLeft {
+			position: static;
+			transform: none;
+			width: 3rem;
+			height: 3rem;
+			font-size: 1.125rem;
+		}
+	}
+}
+
 ///// Size /////
 
 .button_sizeBig {
     padding: 16px 60px 18px 60px;
-    font-size: 22px;
+    font-size: 1.375rem;
 }
 .button_sizeSmall {
     padding: 6px 20px 8px 20px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 .button_sizeTiny {
 	padding: 7px 20px;
@@ -94,7 +150,7 @@
 
 .button_sizeSmall.button_styleClear, .button_sizeTiny.button_styleClear {
     padding: 0 .5rem;
-    font-size: 16px;
+    font-size: 1rem;
 }
 .button_sizeTiny, .button_sizeTiny.button_styleClear {
 	font-size: $fontSizeSmall;
@@ -155,7 +211,7 @@ $btnColorsFocusShadow: ('Main': $colorMainShadow, 'Grey': $colorGreyShadow, 'Inf
     background-color: transparent;
 }
 .button_styleOutline:not(:disabled):hover, .button_styleOutline:not(:disabled):active {
-    color: white;    
+    color: white;
 }
 
 .button_styleClear, .button_styleClear:not(:disabled):hover, .button_styleClear:not(:disabled):active {

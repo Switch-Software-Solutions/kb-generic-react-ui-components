@@ -34,10 +34,7 @@ class Input extends Component {
 	render() {
 		// Set class //
 		let inputContainerClass = [styles.inputContainer];
-		
 		let messageClass = [styles.messageClass];
-
-
 
 		if (this.props.message) inputContainerClass.push(styles.inputContainer_message);
 		switch (this.props.status) {
@@ -49,7 +46,6 @@ class Input extends Component {
 				messageClass.push(styles.inputMessage);
 				break;
 		}
-
 
 		if (this.props.type === INPUT_TYPES.CHECKBOX) {
 			inputContainerClass.push(styles.inputContainer_checkbox);
@@ -90,6 +86,7 @@ class Input extends Component {
 		let labelClass = [styles.label];
 		if (this.props.labelVisible) labelClass.push(styles.label_visible);
 		if (this.props.labelStyle) labelClass.push(this.props.labelStyle);
+		if (this.props.disabled) labelClass.push(styles.inputContainer_notAllowed);
 		let label = this.props.label ? (
 			<label htmlFor={this.inputId} className={labelClass.join(' ')}>
 				{this.props.label}
@@ -106,8 +103,10 @@ class Input extends Component {
 			this.setState({ value: this.props.initialValue });
 		}
 
+		if (this.props.className) inputContainerClass.push(this.props.className);
+
 		return (
-			<div className={inputContainerClass.join(' ')}>
+			<div style={this.props.style} className={inputContainerClass.join(' ')}>
 				{this.props.type !== INPUT_TYPES.CHECKBOX && (label)}
 				<div className={inputGroupClass.join(' ')}>
 					{this.props.type !== INPUT_TYPES.TEXT_AREA
@@ -119,7 +118,7 @@ class Input extends Component {
 							autoFocus={this.props.autofocus}
 							type={this.props.type}
 							placeholder={this.props.placeholder}
-							id={this.inputId}
+							id={this.props.id || this.inputId}
 							className={styles.input}
 							onChange={this.changeHandler}
 							onBlur={this.props.blur}
@@ -188,7 +187,10 @@ Input.propTypes = {
 	max: PropTypes.number,
 	areaRows: PropTypes.number,
 	checked: PropTypes.bool,
-	input: PropTypes.func
+	input: PropTypes.func,
+	className: PropTypes.string,
+	id: PropTypes.string,
+	style: PropTypes.object
 };
 
 export default Input;

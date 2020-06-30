@@ -4,9 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 
-import { ANIMATIONS_DURATION } from '@timeswan/core';
-
 import FlexContainer, { FLEX_ALIGN } from '../FlexContainer/FlexContainer';
+import {ANIMATIONS_DURATION} from "../config";
 
 class Toast extends Component {
 
@@ -16,7 +15,7 @@ class Toast extends Component {
 		this.handleClose = this.handleClose.bind(this);
 	}
 
-		
+
 	handleClose = () => {
 		this.setState({ show: !this.state.show });
 		setTimeout(() => {
@@ -28,7 +27,11 @@ class Toast extends Component {
 		setTimeout(() => { if (this.props.click && !this.state.show) this.handleClose(); }, 4300);
 
 		// Set class //
-		const toastClass = [styles.toast];
+		const toastClass = [styles.toast, styles.slideOut];
+		if (this.state.show) {
+			toastClass.push(styles.hideToast)
+		}
+
 		switch (this.props.color) {
 			case TOAST_COLOR.MAIN:
 				toastClass.push(styles.toast_colorMain);
@@ -52,7 +55,11 @@ class Toast extends Component {
 
 		return (
 			<Fade duration={ANIMATIONS_DURATION.REGULAR}   right>
-				<div role='alert' className={`${toastClass.join(' ')} ${styles.slideOut} ${this.state.show ? styles.hideToast : ''} `}  onClick={this.handleClose}>
+				<div
+					role='alert'
+					className={`${toastClass.join(' ')}`}
+					onClick={this.handleClose}
+				>
 					<FlexContainer align={FLEX_ALIGN.CENTER}>
 						{ this.props.icon ?
 							this.props.iconSpin ?

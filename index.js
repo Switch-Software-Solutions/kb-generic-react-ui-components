@@ -31,7 +31,6 @@ export { default as Menu } from './src/Menu/Menu';
 export { default as Modal } from './src/Modal/Modal';
 export { default as NumberedTitle } from './src/NumberedTitle/NumberedTitle';
 export { default as Overlay } from './src/Overlay/Overlay';
-export { default as ProfileImage } from './src/ProfileImage/ProfileImage';
 export { OVERLAY_TYPES } from './src/Overlay/Overlay';
 export { default as RadioButtons } from './src/RadioButtons/RadioButtons';
 export { RADIO_STYLE } from './src/RadioButtons/RadioButtons';

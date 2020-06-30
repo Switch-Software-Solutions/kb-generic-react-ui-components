@@ -1,3 +1,7 @@
 {
-
+  "UI": {
+    "SEARCH": "Search",
+		"ELEMENT_MODAL_TITLE": "Manage Elements",
+		"BACK": "Return"
+  }
 }

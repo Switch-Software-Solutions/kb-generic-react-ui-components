@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './Tooltip.module.scss';
 import PropTypes from 'prop-types';
 
-import  { systemImages, getImage } from '@timeswan/core';
-
 import FlexContainer from '../FlexContainer/FlexContainer';
 import Logo from '../Logo/Logo';
 import Card from '../Card/Card';
@@ -48,6 +46,7 @@ const Tooltip = (props) => {
 				break;
 		}
 	}
+	if (props.className) tooltipClass.push(props.className);
 
 	return (
 		<div className={tooltipClass.join(' ')}>
@@ -55,8 +54,8 @@ const Tooltip = (props) => {
 			<Card>
 				<div className='marginTop_1 marginLeft_2 marginBottom_1 marginRight_2'>
 					<FlexContainer>
-						{(props.hasLogo && !props.small) && <Logo importedLogo={getImage(systemImages.logoIconImg)} height='50px' />}
-						<div className={styles.tooltip__content}>
+						{(props.hasLogo && !props.small) && <Logo importedLogo={props.logo} height='50px' />}
+						<div className={props.hasLogo && styles.tooltip__content}>
 							{props.children}
 						</div>
 					</FlexContainer>
@@ -71,7 +70,9 @@ Tooltip.propTypes = {
 	hasLogo: PropTypes.bool,
 	direction: PropTypes.any,
 	position: PropTypes.any,
-	children: PropTypes.node.isRequired
+	className: PropTypes.string,
+	children: PropTypes.node.isRequired,
+	logo: PropTypes.node
 };
 
 export default Tooltip;

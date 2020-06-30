@@ -1,14 +1,16 @@
 import React from 'react'; 
 import styles from './MainTitle.module.scss';
 import PropTypes from 'prop-types';
+import ProfileImage from '../ProfileImage/ProfileImage';
 
-const MainTitle = (props) => {
+const MainTitle = (props) => { 
 
 	let titleContClass = [styles.titleCont];
 	if (props.line) titleContClass.push(styles.titleCont_line);
 	if (props.lineDark) titleContClass.push(styles.titleCont_lineDark);
 	if (props.fontNormal) titleContClass.push(styles.titleCont_fontNormal);
 	if (props.noJustify) titleContClass.push(styles.titleCont_noJustify);
+
 
 	let headingElement;
 	switch (props.heading) {
@@ -36,7 +38,16 @@ const MainTitle = (props) => {
 
 	return (
 		<div className={titleContClass.join(' ')}>
-			{headingElement}
+			<div className={styles.titleCont__titleCont}>
+				{props.profilePhoto || props.profilePic ?
+					<ProfileImage
+						path={props.profilePic}
+						profile={props.profilePhoto}
+						styles={styles.profilePic}
+					/> : null } 
+				{headingElement}
+				{props.afterTitleContent}
+			</div>
 			<div className={styles.titleCont__childrenCont}>{props.children}</div>
 		</div>
 	);
@@ -49,7 +60,10 @@ MainTitle.propTypes = {
 	heading: PropTypes.string.isRequired,
 	line: PropTypes.bool,
 	lineDark: PropTypes.bool,
-	noJustify: PropTypes.bool
+	noJustify: PropTypes.bool,
+	profilePhoto: PropTypes.object,
+	profilePic: PropTypes.string,
+	afterTitleContent: PropTypes.object
 };
 
 export default MainTitle;

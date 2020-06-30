@@ -5,10 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Fade from 'react-reveal/Fade';
 
-import { ANIMATIONS_DURATION } from '@timeswan/core';
-
 import Card, { CARD_PADDING } from '../Card/Card';
 import Backdrop from '../Backdrop/Backdrop';
+import {ANIMATIONS_DURATION} from "../config";
 
 class Modal extends Component {
 	constructor(props) {
@@ -46,15 +45,19 @@ class Modal extends Component {
 	}
 
 	render() {
+		// Set class
+		const modalBkgSizeClass = [styles.modalBkgSize];
+		if(this.props.mobileFull) modalBkgSizeClass.push(styles.modalBkgSize_mobileFull);
+
 		return (
 			<>
-
 				<Backdrop nonCloseable={this.props.nonCloseable} show={this.props.show} clicked={this.handleClick}>
+
 					<div className={`${styles.fadeOut}  ${this.state.show ? 'invisible' : ''}`}>
 						<div className={styles.modalBkgScroll}>
 							<Fade duration={ANIMATIONS_DURATION.REGULAR}>
-								<div className={styles.modalBkgSize}>
-									<div className={styles.modal}>
+								<div className={modalBkgSizeClass.join(' ')}>
+									<div className={styles.modal} id={this.props.id}>
 										<Card padding={this.props.padding ? CARD_PADDING.BIG : CARD_PADDING.NONE}>
 											{!this.props.nonCloseable ? <button
 												type='button'
@@ -83,7 +86,8 @@ Modal.propTypes = {
 	show: PropTypes.bool,
 	closeModal: PropTypes.func,
 	nonCloseable: PropTypes.bool,
-	padding: PropTypes.bool
+	padding: PropTypes.bool,
+	mobileFull: PropTypes.bool,
 };
 
 export default Modal;

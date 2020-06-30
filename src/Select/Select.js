@@ -5,8 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-import { THOUGHT_STATUS } from '@timeswan/core';
-
 const Select = (props) => {
 	const { t } = useTranslation();
 	const inputId = Math.random() * 100;
@@ -43,22 +41,21 @@ const Select = (props) => {
 			{props.label}
 		</label>
 	) : null;
-
 	return (
 		<div className={selectContainerClass.join(' ')}>
 			{props.label && label}
-			<div className={styles.selectGroup}>
+			<div id={props.id} className={styles.selectGroup}>
 				<select
 					id={inputId}
 					disabled={props.disabled ? 'disabled' : null}
 					onChange={changeHandler}
 					placeholder={props.placeholder}
 					className={styles.select}
-					defaultValue={props.initialValue ? props.initialValue : props.startEmpty ? 'undefined' : ''}
+					value={props.initialValue ? props.initialValue : props.startEmpty ? 'undefined' : ''}
 				>
 					{
 						props.startEmpty ?
-							<option value="undefined" disabled>{props.placeholder}</option>
+							<option value="undefined" disabled={!props.emptySelectable ? 'disabled' : null}>{props.placeholder}</option>
 							: null
 					}
 					{
@@ -86,7 +83,8 @@ Select.propTypes = {
 	message: PropTypes.string,
 	noMessage: PropTypes.bool,
 	change: PropTypes.func,
-	children: PropTypes.node
+	children: PropTypes.node,
+	emptySelectable: PropTypes.bool
 };
 
 export default Select;
@@ -104,11 +102,6 @@ export const MONTH_OPTIONS = [
 	{ label: 'UI.MONTH.OCT', value: 10 },
 	{ label: 'UI.MONTH.NOV', value: 11 },
 	{ label: 'UI.MONTH.DEC', value: 12 }
-];
-
-export const VISIBILITY_OPTIONS = [
-	{ label: 'UI.THOUGHT_STATUS.DRAFT', value: THOUGHT_STATUS.DRAFT },
-	{ label: 'UI.THOUGHT_STATUS.PUBLISHED', value: THOUGHT_STATUS.PUBLISHED }
 ];
 
 export const YEAR_OPTIONS = [];
