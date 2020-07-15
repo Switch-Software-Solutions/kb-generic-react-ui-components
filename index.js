@@ -36,7 +36,7 @@ export { default as RadioButtons } from './src/RadioButtons/RadioButtons';
 export { RADIO_STYLE } from './src/RadioButtons/RadioButtons';
 export { default as ReadMoreReact } from './src/ReadMoreReact/components/ReadMoreReact';
 export { default as Select } from './src/Select/Select';
-export { MONTH_OPTIONS, VISIBILITY_OPTIONS, YEAR_OPTIONS, DAYS_OPTIONS } from './src/Select/Select';
+export { MONTH_OPTIONS, YEAR_OPTIONS, DAYS_OPTIONS } from './src/Select/Select';
 export { default as StatusMessage } from './src/StatusMessage/StatusMessage';
 export { STATUS_MESSAGE_TYPES } from './src/StatusMessage/StatusMessage';
 export { default as SweetError } from './src/SweetError/SweetError';
