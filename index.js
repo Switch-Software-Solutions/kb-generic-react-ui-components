@@ -24,8 +24,6 @@ export { default as Input } from './src/Input/Input';
 export { INPUT_TYPES, INPUT_STATUS, INPUT_STYLE } from './src/Input/Input';
 export { default as InstructionItem } from './src/InstructionItem/InstructionItem';
 export { default as Logo } from './src/Logo/Logo';
-export { default as MainTitle } from './src/MainTitle/MainTitle';
-export { TITLE_HEADING } from './src/MainTitle/MainTitle';
 export { default as MediaCard } from './src/MediaCard/MediaCard';
 export { default as Menu } from './src/Menu/Menu';
 export { default as Modal } from './src/Modal/Modal';
