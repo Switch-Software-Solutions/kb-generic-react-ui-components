@@ -6,11 +6,9 @@ import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 import FileUploader from '../FileUploader/FileUploader';
 import ImageCropModal from './ImageCropModal/ImageCropModal';
 import Toast, { TOAST_COLOR } from '../Toast/Toast';
-import TutorialContext from 'contexts/Tutorial/TutorialContext';
 
 const ImageCropper = (props) => {
 	const { t } = useTranslation();
-	const tutorialContext = useContext(TutorialContext);
 
 	const [state, setState] = useState({
 		uploadedImage: null
@@ -27,10 +25,9 @@ const ImageCropper = (props) => {
 	};
 
 	const handleUpload = ({ valid }) => {
-		if (tutorialContext.isShowingTutorial) tutorialContext.getImageCropperState(!!state.uploadedImage)
 		setState({ ...state, uploadedImage: valid });
 	};
- 
+
 	const cropComplete = (img) => {
 		const reader = new FileReader();
 		reader.onloadend = () => {
