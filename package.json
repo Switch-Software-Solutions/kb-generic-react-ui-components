@@ -7,15 +7,13 @@
   "scripts": {
     "story": "start-storybook"
   },
-  "peerDependencies": {
+  "dependencies": {
     "eslint-config-react-app": "^5.1.x",
     "i18next": "^19.1.x",
     "prop-types": "^15.x",
     "react": "^16.12.x",
     "react-dom": "^16.12.x",
-    "react-i18next": "^11.3.x"
-  },
-  "dependencies": {
+    "react-i18next": "^11.3.x",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
